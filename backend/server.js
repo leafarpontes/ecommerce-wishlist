@@ -1,10 +1,15 @@
 const express = require("express");
+const cors = require("cors");
+const fs = require("fs");
+
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("<h2>Hello World!</h2>");
+app.get("/products", (req, res) => {
+  const data = JSON.parse(fs.readFileSync("mock-products.json", "utf8"));
+  res.json(data);
 });
 
 const port = process.env.PORT || 3000;
