@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+.DS_Store
+build/
+dist/
+coverage/
+*.log
+*.sqlite
+*.sqlite-journal
+.idea/
+.vscode/
