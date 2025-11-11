@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.6rem;
+  padding: 2rem;
+}
+
+.image {
+  margin-bottom: 0.6rem;
+}
+
+.rating-container {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.sale-price {
+  color: var(--dark-purple);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.star-rating {
+  position: relative;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.rating {
+  position: absolute;
+  top: 0;
+}
+
+.rating-number {
+  margin-left: 0.4rem;
+  color: #666666;
+}
