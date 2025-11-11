@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import styles from './Header.module.css';
 import { CircleUserRound, Heart } from 'lucide-react';
 
@@ -6,10 +7,10 @@ export const Header = () => {
     <header className={styles.header}>
       <img className={styles.logo} src="/logo.svg" alt="Logo" />
       <div className={styles['header-options']}>
-        <div className={styles.wishlist}>
+        <Link to="/wishlist" className={styles['wishlist']}>
           <Heart color="white" size={22} />
           <span className={styles['wishlist-text']}>Wishlist</span>
-        </div>
+        </Link>
         <div className={styles['dropdown']} >
           <CircleUserRound color="white" size={22} />
           <div className={styles['dropdown-content']}>
