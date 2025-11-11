@@ -1,5 +1,5 @@
 .main-container {
-  padding: 0 5.5rem;
+  padding: 0 1.2rem;
 }
 
 .loading-container {
@@ -32,4 +32,16 @@ hr {
   border-style: inset;
   border-width: 1px;
   border-color: rgba(201, 201, 201, 0.747);
+}
+
+@media (min-width: 600px) {
+  .main-container {
+    padding: 0 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding: 0 5.5rem;
+  }
 }

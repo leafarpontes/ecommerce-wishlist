@@ -16,7 +16,7 @@ export const ProductList = () => {
   useEffect(() => {
     const loadProducts = async () => {
       setLoading(true);
-      await new Promise(resolve => setTimeout(resolve, 5000)); // Simulate network delay
+      // await new Promise(resolve => setTimeout(resolve, 5000)); // Simulate network delay
       const result = await fetchProducts();
 
       if (result.success) {
