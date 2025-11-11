@@ -86,3 +86,25 @@
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .logo {
+    height: 1rem;
+  }
+
+  .header-options {
+    gap: 1.5rem;
+  }
+
+  .dropdown-content {
+    margin-right: -0.52rem;
+  }
+
+  .wishlist-text {
+    font-size: 0.9rem;
+  }
+}
