@@ -1,0 +1,88 @@
+.header {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5.5rem
+}
+
+.logo {
+  height: 1.6rem;
+}
+
+.header-options {
+  display: flex;
+  gap: 3rem;
+  margin-left: 1rem;
+}
+
+.wishlist {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wishlist-text {
+  font-size: 1rem;
+  vertical-align: middle;
+  color: white;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
+  min-width: 9rem;
+  margin-top: 0.8rem;
+  margin-right: -0.48rem;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.dropdown-content::after {
+  border: 15px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #fff;
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: -29px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content a:first-child:hover {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.dropdown-content a:last-child:hover {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
