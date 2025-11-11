@@ -4,7 +4,7 @@ import { Wishlist } from "../pages/Wishlist/Wishlist";
 
 export const router = createBrowserRouter([
   {
-    path: "/products",
+    path: "/",
     element: <ProductList />,
   },
   {
