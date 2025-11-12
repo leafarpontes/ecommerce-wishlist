@@ -63,7 +63,7 @@ export const ProductList = () => {
         {!loading && !error && products.length > 0 && (
           <div className={styles['products-grid']}>
             {products.map(product => (
-              <ProductCard key={product.code} product={product} />
+              <ProductCard key={product.code} product={product} origin="ProductList" />
             ))}
           </div>
         )}

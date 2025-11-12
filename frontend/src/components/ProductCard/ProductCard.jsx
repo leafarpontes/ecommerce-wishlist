@@ -1,7 +1,7 @@
 import styles from './ProductCard.module.css';
-import { Star, StarHalf } from "lucide-react";
+import { Star, StarHalf, Heart, X } from "lucide-react";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, origin }) => {
   const { name, priceInCents, salePriceInCents, rating, image } = product;
 
   const fullStars = Math.floor(rating);
@@ -13,6 +13,13 @@ export const ProductCard = ({ product }) => {
 
   return (
     <div className={styles.card}>
+      <div className={styles['button-container']}>
+        {origin === "ProductList" ? (
+          <Heart color='white' className={styles['add-button']} size={22} />
+        ) : (
+          <X className={styles['remove-button']} size={22} />
+        )}
+      </div>
       <img src={image} alt={name} className={styles.image} />
       <p className={styles.description}>{name}</p>
       <div className={styles['rating-container']}>
