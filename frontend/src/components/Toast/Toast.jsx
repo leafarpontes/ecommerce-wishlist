@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Heart, X } from 'lucide-react';
+import { Heart, HeartOff } from 'lucide-react';
 import styles from './Toast.module.css';
 
 export default function Toast({ message, type, onClose }) {
@@ -10,16 +10,18 @@ export default function Toast({ message, type, onClose }) {
 
   const renderIcon = () => {
     if (type === 'add') {
-      return <Heart size={20} color="var(--primary-color)" fill="var(--primary-color)" />;
+      return <Heart size={20} color="#ff0000" fill="#ff0000" />;
     } else if (type === 'remove') {
-      return <X size={20} color="#ff0000" />;
+      return <HeartOff size={20} color="#ff0000" />;
     }
     return null;
   };
 
+  const icon = renderIcon();
+
   return (
     <div className={styles.toast}>
-      {renderIcon() && <span className={styles.icon}>{renderIcon()}</span>}
+      {icon && <span className={styles.icon}>{icon}</span>}
       <span className={styles.message}>{message}</span>
     </div>
   );

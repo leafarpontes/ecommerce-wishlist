@@ -7,13 +7,13 @@ export const Wishlist = () => {
   return (
     <div>
       <Header />
-      <div className={styles['main-container']}>
+      <main className={styles['main-container']}>
         <Breadcrumb>
           <Link to="/">Home</Link>
           <Link to="/wishlist">Wishlist</Link>
         </Breadcrumb>
         <hr />
-      </div>
+      </main>
     </div>
   )
 };

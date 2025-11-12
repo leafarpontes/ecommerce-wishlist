@@ -3,9 +3,9 @@
   bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #323232;
+  background-color: #8400ffe3;
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -27,7 +27,9 @@
 }
 
 .icon {
-  font-size: 1rem;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
 }
 
 .message {
