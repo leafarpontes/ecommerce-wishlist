@@ -24,6 +24,10 @@
   background-color: #ff0000;
 }
 
+.button-container.in-wishlist {
+  background-color: #ff0000;
+}
+
 .image {
   width: 100%;
   height: auto;
