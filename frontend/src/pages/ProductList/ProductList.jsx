@@ -61,11 +61,11 @@ export const ProductList = () => {
         )}
 
         {!loading && !error && products.length > 0 && (
-          <ul>
+          <div className={styles['products-grid']}>
             {products.map(product => (
               <ProductCard key={product.code} product={product} />
             ))}
-          </ul>
+          </div>
         )}
       </main>
     </div>
