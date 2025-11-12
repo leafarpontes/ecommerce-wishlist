@@ -1,0 +1,56 @@
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #323232;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.message {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (min-width: 600px) {
+  .toast {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .icon {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .toast {
+    padding: 1rem 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+}

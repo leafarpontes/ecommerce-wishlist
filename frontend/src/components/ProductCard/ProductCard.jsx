@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { wishlistService } from '../../services/wishlistService';
+import { useToast } from '../../contexts/ToastContext';
 import styles from './ProductCard.module.css';
 import { Star, StarHalf, Heart, X } from "lucide-react";
 
 export const ProductCard = ({ product, origin, onWishlistChange }) => {
   const { name, priceInCents, salePriceInCents, rating, image, code } = product;
   const [isInWishlist, setIsInWishlist] = useState(false);
+  const { showToast } = useToast();
 
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
@@ -24,6 +26,7 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
       if (result.success) {
         console.log('Product removed from wishlist!');
         setIsInWishlist(false);
+        showToast('Produto removido da lista de desejos!', 'remove');
       } else {
         console.log('Failed to remove from wishlist');
       }
@@ -32,6 +35,7 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
       if (result.success) {
         console.log('Product added to wishlist!');
         setIsInWishlist(true);
+        showToast('Produto adicionado à lista de desejos!', 'add');
       } else {
         console.log(result.message || 'Failed to add to wishlist');
       }
