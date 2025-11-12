@@ -24,7 +24,6 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
     if (isInWishlist) {
       const result = wishlistService.removeFromWishlist(code);
       if (result.success) {
-        console.log('Product removed from wishlist!');
         setIsInWishlist(false);
         showToast('Produto removido da lista de desejos!', 'remove');
       } else {
@@ -33,7 +32,6 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
     } else {
       const result = wishlistService.addToWishlist(product);
       if (result.success) {
-        console.log('Product added to wishlist!');
         setIsInWishlist(true);
         showToast('Produto adicionado à lista de desejos!', 'add');
       } else {
@@ -45,19 +43,24 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
   const handleRemoveFromWishlist = () => {
     const result = wishlistService.removeFromWishlist(code);
     if (result.success) {
-      console.log('Product removed from wishlist!');
-      // Optional: Call parent callback to refresh wishlist display
       if (onWishlistChange) {
         onWishlistChange();
+        showToast('Produto removido da lista de desejos!', 'remove');
       }
     } else {
       console.log('Failed to remove from wishlist');
     }
   };
 
+  const getButtonClass = () => {
+    if (origin === "Wishlist") return styles['wishlist-remove'];
+    if (isInWishlist) return styles['wishlist-active'];
+    return '';
+  };
+
   return (
     <div className={styles.card}>
-      <div className={`${styles['button-container']} ${isInWishlist ? styles['in-wishlist'] : ''}`}>
+      <div className={`${styles['button-container']} ${getButtonClass()}`}>
         {origin === "ProductList" ? (
           <Heart 
             color='white' 
@@ -67,6 +70,7 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
           />
         ) : (
           <X 
+            color='black'
             className={styles['remove-button']} 
             size={22} 
             onClick={handleRemoveFromWishlist}

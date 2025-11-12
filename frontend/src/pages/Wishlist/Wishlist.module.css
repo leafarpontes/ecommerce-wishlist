@@ -1,5 +1,7 @@
 .main-container {
-  padding: 0 5.5rem;
+  padding: 0 1.2rem;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 hr {
@@ -11,4 +13,39 @@ hr {
   border-style: inset;
   border-width: 1px;
   border-color: rgba(201, 201, 201, 0.747);
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666666;
+  margin: 1rem;
+  font-weight: 500;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding: 0 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

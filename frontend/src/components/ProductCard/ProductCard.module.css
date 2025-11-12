@@ -24,8 +24,12 @@
   background-color: #ff0000;
 }
 
-.button-container.in-wishlist {
+.button-container.wishlist-active {
   background-color: #ff0000;
+}
+
+.button-container.wishlist-remove {
+  background-color: #ffffff;
 }
 
 .image {
