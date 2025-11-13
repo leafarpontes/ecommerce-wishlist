@@ -10,7 +10,6 @@ export const NotFound = () => {
         <Link to="/">Home</Link>
         <span>404</span>
       </Breadcrumb>
-      <hr />
       
       <div className={styles['not-found-content']}>
         <h1 className={styles['error-code']}>404</h1>

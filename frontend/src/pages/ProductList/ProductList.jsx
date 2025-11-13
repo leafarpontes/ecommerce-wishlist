@@ -37,7 +37,6 @@ export const ProductList = () => {
       <Breadcrumb>
         <Link to="/">Home</Link>
       </Breadcrumb>
-      <hr />
 
       {loading && (
         <div className={styles['loading-container']}>

@@ -29,7 +29,6 @@ export const Wishlist = () => {
         <Link to="/">Home</Link>
         <Link to="/wishlist">Wishlist</Link>
       </Breadcrumb>
-      <hr />
 
       {loading && (
         <div className={styles['loading-container']}>
