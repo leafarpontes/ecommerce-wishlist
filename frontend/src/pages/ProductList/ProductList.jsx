@@ -1,6 +1,5 @@
 import styles from './ProductList.module.css';
 import { useEffect, useState } from "react";
-import { Header } from "../../components/Header/Header";
 import { fetchProducts } from "../../services/api";
 import { Message } from "../../components/Message/Message";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
@@ -34,40 +33,37 @@ export const ProductList = () => {
   }, []);
 
   return (
-    <div>
-      <Header />
-      <main className={styles['main-container']}>
-        <Breadcrumb>
-          <Link to="/">Home</Link>
-        </Breadcrumb>
-        <hr />
+    <main className={styles['main-container']}>
+      <Breadcrumb>
+        <Link to="/">Home</Link>
+      </Breadcrumb>
+      <hr />
 
-        {loading && (
-          <div className={styles['loading-container']}>
-            <LoadingSpinner /> Carregando...
-          </div>
-        )}
+      {loading && (
+        <div className={styles['loading-container']}>
+          <LoadingSpinner /> Carregando...
+        </div>
+      )}
 
-        {error && !loading && (
-          <Message variant="error">
-            Houve um problema ao buscar os itens da loja. Verifique sua conexão ou tente novamente em instantes
-          </Message>
-        )}
+      {error && !loading && (
+        <Message variant="error">
+          Houve um problema ao buscar os itens da loja. Verifique sua conexão ou tente novamente em instantes
+        </Message>
+      )}
 
-        {!loading && !error && products.length === 0 && (
-          <Message variant="info">
-            Nenhum produto disponível no momento.
-          </Message>
-        )}
+      {!loading && !error && products.length === 0 && (
+        <Message variant="info">
+          Nenhum produto disponível no momento.
+        </Message>
+      )}
 
-        {!loading && !error && products.length > 0 && (
-          <div className={styles['products-grid']}>
-            {products.map(product => (
-              <ProductCard key={product.code} product={product} origin="ProductList" />
-            ))}
-          </div>
-        )}
-      </main>
-    </div>
+      {!loading && !error && products.length > 0 && (
+        <div className={styles['products-grid']}>
+          {products.map(product => (
+            <ProductCard key={product.code} product={product} origin="ProductList" />
+          ))}
+        </div>
+      )}
+    </main>
   )
 };

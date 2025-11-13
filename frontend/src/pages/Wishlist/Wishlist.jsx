@@ -1,6 +1,5 @@
 import styles from "./Wishlist.module.css";
 import { Link } from "react-router";
-import { Header } from "../../components/Header/Header";
 import { Breadcrumb } from "../../components/Breadcrumb/Breadcrumb";
 import { useEffect, useState } from "react";
 import { wishlistService } from "../../services/wishlistService";
@@ -25,35 +24,32 @@ export const Wishlist = () => {
   }, []);
 
   return (
-    <div>
-      <Header />
-      <main className={styles['main-container']}>
-        <Breadcrumb>
-          <Link to="/">Home</Link>
-          <Link to="/wishlist">Wishlist</Link>
-        </Breadcrumb>
-        <hr />
+    <main className={styles['main-container']}>
+      <Breadcrumb>
+        <Link to="/">Home</Link>
+        <Link to="/wishlist">Wishlist</Link>
+      </Breadcrumb>
+      <hr />
 
-        {loading && (
-          <div className={styles['loading-container']}>
-            <LoadingSpinner /> Carregando...
-          </div>
-        )}
+      {loading && (
+        <div className={styles['loading-container']}>
+          <LoadingSpinner /> Carregando...
+        </div>
+      )}
 
-        {!loading && products.length === 0 && (
-          <Message variant="info">
-            Você ainda não possui itens salvos na sua Lista de Desejos.
-          </Message>
-        )}
+      {!loading && products.length === 0 && (
+        <Message variant="info">
+          Você ainda não possui itens salvos na sua Lista de Desejos.
+        </Message>
+      )}
 
-        {!loading && products.length > 0 && (
-          <div className={styles['products-grid']}>
-            {products.map(product => (
-              <ProductCard key={product.code} product={product} origin="Wishlist" onWishlistChange={loadWishlist} />
-            ))}
-          </div>
-        )}
-      </main>
-    </div>
+      {!loading && products.length > 0 && (
+        <div className={styles['products-grid']}>
+          {products.map(product => (
+            <ProductCard key={product.code} product={product} origin="Wishlist" onWishlistChange={loadWishlist} />
+          ))}
+        </div>
+      )}
+    </main>
   )
 };
