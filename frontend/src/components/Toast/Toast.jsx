@@ -10,9 +10,9 @@ export default function Toast({ message, type, onClose }) {
 
   const renderIcon = () => {
     if (type === 'add') {
-      return <Heart size={20} color="#ff0000" fill="#ff0000" />;
+      return <Heart size={20} color="var(--primary-color)" fill="var(--primary-color)" />;
     } else if (type === 'remove') {
-      return <HeartOff size={20} color="#ff0000" />;
+      return <HeartOff size={20} color="var(--primary-color)" />;
     }
     return null;
   };
