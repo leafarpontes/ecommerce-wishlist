@@ -9,7 +9,7 @@
   font-weight: 400;
 }
 
-.breadcrumb-container a:last-of-type {
+.breadcrumb-container a:last-of-type, .breadcrumb-container span {
   font-weight: 600;
 }
 
