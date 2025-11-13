@@ -5,7 +5,9 @@ import { CircleUserRound, Heart } from 'lucide-react';
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <img className={styles.logo} src="/logo.svg" alt="Logo" />
+      <Link to="/">
+        <img className={styles.logo} src="/logo.svg" alt="Logo" />
+      </Link>
       <div className={styles['header-options']}>
         <Link to="/wishlist" className={styles['wishlist']}>
           <Heart color="white" size={22} />
