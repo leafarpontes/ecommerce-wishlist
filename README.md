@@ -2,6 +2,12 @@
 
 A modern and responsive e-commerce wishlist application built with React and Vite. This project allows users to browse products, add them to a wishlist, and manage their favorite items with a clean and intuitive interface.
 
+## Live Demo
+
+**Frontend**: [https://ecommerce-wishlist-beryl.vercel.app](https://ecommerce-wishlist-beryl.vercel.app)
+
+> ⚠️ **Note**: The backend is hosted on Render's free tier. The first request may take 30-50 seconds as the server wakes up from sleep mode.
+
 ## Features
 
 - **Product Listing**: Browse through available products with detailed information including images, ratings, and prices
