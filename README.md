@@ -23,6 +23,8 @@ A modern and responsive e-commerce wishlist application built with React and Vit
 - **CSS Modules** - Scoped styling
 - **Lucide React** - Icon library
 - **ESLint** - Code linting
+- **Vitest** - Unit testing framework
+- **React Testing Library** - Component testing utilities
 
 ### Backend
 - **Node.js** - Runtime environment
@@ -104,6 +106,40 @@ ecommerce-wishlist/
    ```
 
 3. **Open your browser** and navigate to `http://localhost:5173`
+
+## Testing
+
+The project includes unit tests for core functionality using Vitest and React Testing Library.
+
+### Running Tests
+
+```bash
+cd frontend
+npm test          # Run tests in watch mode
+```
+
+### Test Coverage
+
+**wishlistService Tests** (8 tests)
+- ✅ Return empty array when wishlist is empty
+- ✅ Return stored wishlist items
+- ✅ Successfully add product to empty wishlist
+- ✅ Prevent adding duplicate products
+- ✅ Successfully remove product from wishlist
+- ✅ Update localStorage after removal
+- ✅ Return true if product exists in wishlist
+- ✅ Return false if product does not exist in wishlist
+
+**ProductCard Component Tests** (7 tests)
+- ✅ Render product information correctly (name, prices, rating, image)
+- ✅ Render heart icon when origin is ProductList
+- ✅ Render X icon when origin is Wishlist
+- ✅ Render correct number of filled stars based on rating
+- ✅ Add product to wishlist when heart icon is clicked
+- ✅ Remove product from wishlist when clicking heart on wishlisted item
+- ✅ Call onWishlistChange callback when removing from Wishlist page
+
+**Total: 15 tests** covering critical business logic and user interactions.
 
 ## Key Features Explained
 
