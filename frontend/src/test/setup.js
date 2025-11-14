@@ -1,6 +1,6 @@
 import { beforeEach } from 'vitest';
+import '@testing-library/jest-dom/vitest';
 
-// Mock localStorage
 const localStorageMock = (() => {
   let store = {};
 
@@ -20,7 +20,6 @@ const localStorageMock = (() => {
 
 global.localStorage = localStorageMock;
 
-// Clear localStorage before each test
 beforeEach(() => {
   localStorage.clear();
 });

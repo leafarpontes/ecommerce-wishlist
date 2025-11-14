@@ -88,9 +88,9 @@ export const ProductCard = ({ product, origin, onWishlistChange }) => {
           </div>
           <div className={`${styles['stars']} ${styles['rating']}`}>
             {Array.from({ length: fullStars }, (_, index) => (
-              <Star key={index} fill="#e79400" strokeWidth={0} />
+              <Star key={index} fill="#e79400" data-testid="full-filled-star" strokeWidth={0} />
             ))}
-            {halfStar && <StarHalf fill="#e79400" strokeWidth={0} />}
+            {halfStar && <StarHalf fill="#e79400" data-testid="half-filled-star" strokeWidth={0} />}
           </div>
         </div>
         <span className={styles['rating-number']}>{rating}</span>
